@@ -5,5 +5,4 @@ enum class Type {
     PLUS
 }
 
-data class Token(val type: Type, val value: String) {
-}
+data class Token(val type: Type, val value: String)
