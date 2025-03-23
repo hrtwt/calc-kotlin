@@ -1,10 +1,9 @@
 package org.hrtwt
 
-import org.hrtwt.ast.Expression
-
-fun main(src: String): Expression {
+fun main(src: String): Double {
     val tokens = Lexer().lex(src)
     val exp = Parser().parse(tokens)
+    val value = Calculator().calculate(exp)
 
-    return exp
+    return value
 }

@@ -1,3 +1,7 @@
 package org.hrtwt.ast
 
-interface Expression {}
+import org.hrtwt.ExpressionVisitor
+
+sealed interface Expression {
+    fun accept(visitor: ExpressionVisitor)
+}
