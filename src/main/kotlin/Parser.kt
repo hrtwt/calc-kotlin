@@ -2,7 +2,7 @@ package org.hrtwt
 
 import org.hrtwt.ast.Expression
 import org.hrtwt.ast.Number
-import org.hrtwt.ast.Plus
+import org.hrtwt.ast.Sum
 
 class Parser {
     fun parse(tokens: List<Token>): Expression {
@@ -23,7 +23,7 @@ class Parser {
 
     private fun parseBiOperator(left: Expression, op: Token, que: ArrayDeque<Token>): Expression {
         val right = parseExpression(que)
-        return Plus(left, right)
+        return Sum(left, right)
     }
 
     private fun parseNumber(number: Token): Number {
